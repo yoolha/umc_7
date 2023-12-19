@@ -1,12 +1,14 @@
-import express from 'express'          // ES6
+// index.js
 
-const app = express()
-const port = 3000
+import express from 'express';
+import { tempRouter } from './src/routes/temp.route';
 
-app.get('/', function (req, res) {
-    res.send('Hello World')
-})
+const app = express();
+const port = 3000;
+
+// router setting
+app.use('/temp', tempRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-})
+}); 
